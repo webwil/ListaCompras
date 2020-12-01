@@ -16,12 +16,44 @@
         </div>
       </nav>
 
-      <!--Inicio da lista-->
+      
       <div class="container-fluid">
+          <!--Formulario de iserção de produtos-->
+          <div class="form-inline">
+              <div class="form-group">
+                  <input type="text" class="form-control" id="desc" placeholder="Descrição">
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control" id="qtd" placeholder="Quantidade">
+              </div>
+              <div class="form-group">
+                  <input type="text" class="form-control" id="valor" placeholder="Valor">
+              </div>
+              <span id="btnUpdate" style="display: none;">
+                <span id="inputIdUpdate"></span>
+                <button onclick="updateData();" class="btn btn-default">Salvar</button>
+                <button onclick="resetForm();" class="btn btn-default">Cancelar</button>
+              </span>
+              <span id="btnAdd">
+                <button onclick="addData();" class="btn btn-default">Cadastrar</button>
+                <button onclick="resetForm();" class="btn btn-default">Limpar</button>
+                <button onclick="deleteList();" class="btn btn-default">Excluir Lista</button>
+              </span>
+          </div>
+
+          <div id="errors" style="display: none;"></div>
+        
+          <!--Inicio da listagem de produtos-->
           <table id="listTable" class="table">
               
           </table>
       </div>
+
+      <nav class="navbar navbar-default navbar-fixed-bottom">
+          <div class="container">
+              <h4 class="text-center text-success">Total: <span id="totalValue">R$ 0,00</span></h4>
+          </div>
+      </nav>
 
       <script src="js/config.js"></script>
       <script src="js/main.js"></script>
